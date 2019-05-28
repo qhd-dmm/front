@@ -5,14 +5,14 @@
         :activeKey="customActiveKey"
         :tabBarStyle="{ textAlign: 'center', borderBottom: 'unset' }"
         @change="handleTabClick">
-        <a-tab-pane key="tab1" tab="账号密码登陆">
+        <a-tab-pane key="tab1" tab="账号密码登录">
 
           <a-form-item>
             <a-input
               size="large"
               v-decorator="['username',validatorRules.username,{ validator: this.handleUsernameOrEmail }]"
               type="text"
-              placeholder="请输入帐户名 / jeecg">
+              placeholder="请输入帐户名">
               <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
           </a-form-item>
@@ -23,7 +23,7 @@
               size="large"
               type="password"
               autocomplete="false"
-              placeholder="密码 / 123456">
+              placeholder="密码">
               <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
           </a-form-item>
@@ -49,7 +49,7 @@
 
 
         </a-tab-pane>
-        <a-tab-pane key="tab2" tab="手机号登陆">
+        <a-tab-pane key="tab2" tab="手机号登录">
           <a-form-item>
             <a-input
               v-decorator="['mobile',validatorRules.mobile]"
@@ -85,7 +85,7 @@
       </a-tabs>
 
       <a-form-item>
-        <a-checkbox v-model="formLogin.rememberMe">自动登陆</a-checkbox>
+        <a-checkbox v-model="formLogin.rememberMe">自动登录</a-checkbox>
         <router-link :to="{ name: 'recover', params: { user: 'aaa'} }" class="forge-password" style="float: right;">
           忘记密码
         </router-link>

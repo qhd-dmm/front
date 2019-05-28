@@ -1,0 +1,208 @@
+<template>
+  <a-card :bordered="false">
+
+    <!-- 查询区域 -->
+    <div class="table-page-search-wrapper">
+      <a-form layout="inline">
+        <a-row :gutter="24">
+
+          <a-col :md="6" :sm="8">
+            <a-form-item label="订单表">
+              <a-input placeholder="请输入订单表" v-model="queryParam.orderId"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="清单类型(1.活体  2.商品   3.服务   4.套餐 )">
+              <a-input placeholder="请输入清单类型(1.活体  2.商品   3.服务   4.套餐 )" v-model="queryParam.billType"></a-input>
+            </a-form-item>
+          </a-col>
+        <template v-if="toggleSearchStatus">
+        <a-col :md="6" :sm="8">
+            <a-form-item label="是否赠礼">
+              <a-input placeholder="请输入是否赠礼" v-model="queryParam.isGift"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="供应商id">
+              <a-input placeholder="请输入供应商id" v-model="queryParam.supplierId"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="商品id">
+              <a-input placeholder="请输入商品id" v-model="queryParam.goodsId"></a-input>
+            </a-form-item>
+          </a-col>
+        </template>
+          <a-col :md="6" :sm="8" >
+            <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
+              <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
+              <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
+              <a @click="handleToggleSearch" style="margin-left: 8px">
+                {{ toggleSearchStatus ? '收起' : '展开' }}
+                <a-icon :type="toggleSearchStatus ? 'up' : 'down'"/>
+              </a>
+            </span>
+          </a-col>
+
+        </a-row>
+      </a-form>
+    </div>
+
+    <!-- 操作按钮区域 -->
+    <div class="table-operator">
+      <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
+      <a-button type="primary" icon="download" @click="handleExportXls('订单明细表')">导出</a-button>
+      <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel">
+        <a-button type="primary" icon="import">导入</a-button>
+      </a-upload>
+      <a-dropdown v-if="selectedRowKeys.length > 0">
+        <a-menu slot="overlay">
+          <a-menu-item key="1" @click="batchDel"><a-icon type="delete"/>删除</a-menu-item>
+        </a-menu>
+        <a-button style="margin-left: 8px"> 批量操作 <a-icon type="down" /></a-button>
+      </a-dropdown>
+    </div>
+
+    <!-- table区域-begin -->
+    <div>
+      <div class="ant-alert ant-alert-info" style="margin-bottom: 16px;">
+        <i class="anticon anticon-info-circle ant-alert-icon"></i> 已选择 <a style="font-weight: 600">{{ selectedRowKeys.length }}</a>项
+        <a style="margin-left: 24px" @click="onClearSelected">清空</a>
+      </div>
+
+      <a-table
+        ref="table"
+        size="middle"
+        bordered
+        rowKey="id"
+        :columns="columns"
+        :dataSource="dataSource"
+        :pagination="ipagination"
+        :loading="loading"
+        :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
+        @change="handleTableChange">
+
+        <span slot="action" slot-scope="text, record">
+          <a @click="handleEdit(record)">编辑</a>
+
+          <a-divider type="vertical" />
+          <a-dropdown>
+            <a class="ant-dropdown-link">更多 <a-icon type="down" /></a>
+            <a-menu slot="overlay">
+              <a-menu-item>
+                <a-popconfirm title="确定删除吗?" @confirm="() => handleDelete(record.id)">
+                  <a>删除</a>
+                </a-popconfirm>
+              </a-menu-item>
+            </a-menu>
+          </a-dropdown>
+        </span>
+
+      </a-table>
+    </div>
+    <!-- table区域-end -->
+
+    <!-- 表单区域 -->
+    <dmmOrderBill-modal ref="modalForm" @ok="modalFormOk"></dmmOrderBill-modal>
+  </a-card>
+</template>
+
+<script>
+  import DmmOrderBillModal from './modules/DmmOrderBillModal'
+  import { JeecgListMixin } from '@/mixins/JeecgListMixin'
+
+  export default {
+    name: "DmmOrderBillList",
+    mixins:[JeecgListMixin],
+    components: {
+      DmmOrderBillModal
+    },
+    data () {
+      return {
+        description: '订单明细表管理页面',
+        // 表头
+        columns: [
+          {
+            title: '#',
+            dataIndex: '',
+            key:'rowIndex',
+            width:60,
+            align:"center",
+            customRender:function (t,r,index) {
+              return parseInt(index)+1;
+            }
+           },
+		   {
+            title: '订单表',
+            align:"center",
+            dataIndex: 'orderId'
+           },
+		   {
+            title: '清单类型(1.活体  2.商品   3.服务   4.套餐 )',
+            align:"center",
+            dataIndex: 'billType'
+           },
+		   {
+            title: '是否赠礼',
+            align:"center",
+            dataIndex: 'isGift'
+           },
+		   {
+            title: '供应商id',
+            align:"center",
+            dataIndex: 'supplierId'
+           },
+		   {
+            title: '商品id',
+            align:"center",
+            dataIndex: 'goodsId'
+           },
+		   {
+            title: '商品数量',
+            align:"center",
+            dataIndex: 'num'
+           },
+		   {
+            title: '清单价格',
+            align:"center",
+            dataIndex: 'totalPrice'
+           },
+		   {
+            title: '清单备注',
+            align:"center",
+            dataIndex: 'billRemarks'
+           },
+		   {
+            title: '0.未发生退款       1.退款中       2退款完成',
+            align:"center",
+            dataIndex: 'refundStatus'
+           },
+          {
+            title: '操作',
+            dataIndex: 'action',
+            align:"center",
+            scopedSlots: { customRender: 'action' },
+          }
+        ],
+		url: {
+          list: "/dmmOrderBill/dmmOrderBill/list",
+          delete: "/dmmOrderBill/dmmOrderBill/delete",
+          deleteBatch: "/dmmOrderBill/dmmOrderBill/deleteBatch",
+          exportXlsUrl: "dmmOrderBill/dmmOrderBill/exportXls",
+          importExcelUrl: "dmmOrderBill/dmmOrderBill/importExcel",
+       },
+    }
+  },
+  computed: {
+    importExcelUrl: function(){
+      return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`;
+    }
+  },
+    methods: {
+     
+    }
+  }
+</script>
+<style scoped>
+  @import '~@assets/less/common.less'
+</style>

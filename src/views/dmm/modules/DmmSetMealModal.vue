@@ -29,12 +29,6 @@
           label="折后总价">
           <a-input-number v-decorator="[ 'realAmount', {}]" />
         </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="1启用   -1停用">
-          <a-input placeholder="请输入1启用   -1停用" v-decorator="['dataFlag', {}]" />
-        </a-form-item>
 		
       </a-form>
     </a-spin>

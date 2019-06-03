@@ -122,7 +122,7 @@
 		   {
             title: '删除标志 ',
             align:"center",
-            dataIndex: 'dataFlag'
+            dataIndex: 'dataFlag_dictText'
            },
           {
             title: '操作',

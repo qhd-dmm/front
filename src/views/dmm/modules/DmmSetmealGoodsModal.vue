@@ -20,8 +20,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="商品类型    1猫   2商品  3服务">
-          <a-input placeholder="请输入商品类型    1猫   2商品  3服务" v-decorator="['goodsType', {}]" />
+          label="商品类型">
+          <j-dict-select-tag  :triggerChange="true" dictCode="goods_type"  v-decorator="['goodsType', validatorRules.goodsType]" placeholder="请选择商品类型">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"

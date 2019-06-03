@@ -133,14 +133,14 @@
             }
            },
 		   {
-            title: '订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)',
+            title: '订单状态',
             align:"center",
-            dataIndex: 'orderStatus'
+            dataIndex: 'orderStatus_dictText'
            },
 		   {
-            title: '收货方式	0:送货上门 1:自提',
+            title: '收货方式',
             align:"center",
-            dataIndex: 'deliverType'
+            dataIndex: 'deliverType_dictText'
            },
 		   {
             title: '客户id',
@@ -158,34 +158,34 @@
             dataIndex: 'deliverMoney'
            },
 		   {
-            title: '订单总金额  包括运费',
+            title: '订单总金额',
             align:"center",
             dataIndex: 'totalMoney'
            },
 		   {
-            title: '实际订单总金额 进行各种折扣之后的金额',
+            title: '折后总金额',
             align:"center",
-            dataIndex: 'realTotalMoney'
+            dataIndex: 'realTotalMoney_dictText'
            },
 		   {
-            title: '支付方式  0:货到付款 1:先款后货',
+            title: '支付方式',
             align:"center",
-            dataIndex: 'payType'
+            dataIndex: 'payType_dictText'
            },
 		   {
-            title: '支付来源  1:现金，2：支付宝  3微信',
+            title: '支付来源',
             align:"center",
-            dataIndex: 'payFrom'
+            dataIndex: 'payFrom_dictText'
            },
 		   {
-            title: '是否支付定金 0:未支付 1:已支付',
+            title: '是否支付定金',
             align:"center",
-            dataIndex: 'isPayFront'
+            dataIndex: 'isPayFront_dictText'
            },
 		   {
-            title: '是否支付尾款	0:未支付 1:已支付',
+            title: '是否支付尾款',
             align:"center",
-            dataIndex: 'isPayAll'
+            dataIndex: 'isPayAll_dictText'
            },
 		   {
             title: '收货人姓名',
@@ -208,9 +208,9 @@
             dataIndex: 'orderScore'
            },
 		   {
-            title: '是否需要发票   1:需要 0:不需要',
+            title: '是否需要发票',
             align:"center",
-            dataIndex: 'isInvoice'
+            dataIndex: 'isInvoice_dictText'
            },
 		   {
             title: '发票抬头',
@@ -218,9 +218,9 @@
             dataIndex: 'invoiceClient'
            },
 		   {
-            title: '订单来源	0:门店 1:微信',
+            title: '订单来源',
             align:"center",
-            dataIndex: 'orderSrc'
+            dataIndex: 'orderSrc_dictText'
            },
 		   {
             title: '收货时间',
@@ -233,7 +233,7 @@
             dataIndex: 'deliveryTime'
            },
 		   {
-            title: '订单描述(针对于发猫前的进展信息)',
+            title: '订单描述',
             align:"center",
             dataIndex: 'orderDescription'
            },
@@ -248,9 +248,9 @@
             dataIndex: 'staffId'
            },
 		   {
-            title: '0.未发生退款       1.退款中       2退款完成',
+            title: '退款状态',
             align:"center",
-            dataIndex: 'refundStatus'
+            dataIndex: 'refundStatus_dictText'
            },
 		   {
             title: '快递公司ID',
@@ -263,9 +263,9 @@
             dataIndex: 'expressNo'
            },
 		   {
-            title: '是否包含套餐 1是  -1不是',
+            title: '是否包含套餐',
             align:"center",
-            dataIndex: 'ifSetMeal'
+            dataIndex: 'ifSetMeal_dictText'
            },
           {
             title: '操作',

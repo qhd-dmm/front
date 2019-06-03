@@ -133,9 +133,9 @@
             dataIndex: 'setMealId'
            },
 		   {
-            title: '商品类型    1猫   2商品  3服务',
+            title: '商品类型',
             align:"center",
-            dataIndex: 'goodsType'
+            dataIndex: 'goodsType_dictText'
            },
 		   {
             title: '商品id   ',

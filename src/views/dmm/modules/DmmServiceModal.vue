@@ -32,12 +32,6 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="1启用    -1无效">
-          <a-input placeholder="请输入1启用    -1无效" v-decorator="['deleteFlag', {}]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
           label="服务名称">
           <a-input placeholder="请输入服务名称" v-decorator="['serviceName', {}]" />
         </a-form-item>

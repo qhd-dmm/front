@@ -38,8 +38,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="供应商状态    0停用  1启用">
-          <a-input placeholder="请输入供应商状态    0停用  1启用" v-decorator="['supplierStatus', validatorRules.supplierStatus ]" />
+          label="供应商状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="supplier_status"  v-decorator="['supplierStatus', validatorRules.supplierStatus]" placeholder="请选择供应商状态">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -56,20 +57,16 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="供应商类型   1.活体 2.食品用品  3服务商">
-          <a-input placeholder="请输入供应商类型   1.活体 2.食品用品  3服务商" v-decorator="['supplierType', validatorRules.supplierType ]" />
+          label="供应商类型">
+          <j-dict-select-tag  :triggerChange="true" dictCode="supplier_type"  v-decorator="['supplierType', validatorRules.supplierType]" placeholder="请选择供应商类型">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否合格   0不合格   1合格">
-          <a-input placeholder="请输入是否合格   0不合格   1合格" v-decorator="['qualifiedStatus', validatorRules.qualifiedStatus ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="删除标志    -1已删除   1未删除">
-          <a-input placeholder="请输入删除标志    -1已删除   1未删除" v-decorator="['dateStatus', validatorRules.dateStatus ]" />
+          label="是否合格">
+          <j-dict-select-tag  :triggerChange="true" dictCode="qualified_status"  v-decorator="['qualifiedStatus', validatorRules.qualifiedStatus]" placeholder="请选择是否合格">
+          </j-dict-select-tag>
         </a-form-item>
 		
       </a-form>

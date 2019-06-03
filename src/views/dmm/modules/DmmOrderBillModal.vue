@@ -14,20 +14,22 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="订单表">
+          label="订单清单表">
           <a-input-number v-decorator="[ 'orderId', {}]" />
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="清单类型(1.活体  2.商品   3.服务   4.套餐 )">
-          <a-input placeholder="请输入清单类型(1.活体  2.商品   3.服务   4.套餐 )" v-decorator="['billType', {}]" />
+          label="清单类型">
+          <j-dict-select-tag  :triggerChange="true" dictCode="bill_type"  v-decorator="['billType', validatorRules.billType ]" placeholder="请选择清单类型">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
           label="是否赠礼">
-          <a-input placeholder="请输入是否赠礼" v-decorator="['isGift', {}]" />
+          <j-dict-select-tag  :triggerChange="true" dictCode="is_gift"  v-decorator="['billType', validatorRules.billType ]" placeholder="是否赠礼">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -62,8 +64,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="0.未发生退款       1.退款中       2退款完成">
-          <a-input placeholder="请输入0.未发生退款       1.退款中       2退款完成" v-decorator="['refundStatus', {}]" />
+          label="退款状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="refund_status"  v-decorator="['refundStatus', validatorRules.billType ]" placeholder="请选择退款状态">
+          </j-dict-select-tag>
         </a-form-item>
 		
       </a-form>

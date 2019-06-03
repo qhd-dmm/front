@@ -14,14 +14,16 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)">
-          <a-input placeholder="请输入订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)" v-decorator="['orderStatus', validatorRules.orderStatus ]" />
+          label="订单状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="order_status"  v-decorator="['orderStatus', validatorRules.orderStatus ]" placeholder="请选择订单状态">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="收货方式	0:送货上门 1:自提">
-          <a-input placeholder="请输入收货方式	0:送货上门 1:自提" v-decorator="['deliverType', validatorRules.deliverType ]" />
+          label="收货方式	">
+          <j-dict-select-tag  :triggerChange="true" dictCode="deliver_type"  v-decorator="['deliverType', validatorRules.deliverType ]" placeholder="请选择收货方式">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -44,38 +46,42 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="订单总金额  包括运费">
+          label="订单总金额">
           <a-input-number v-decorator="[ 'totalMoney', validatorRules.totalMoney ]" />
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="实际订单总金额 进行各种折扣之后的金额">
+          label="实际订单总金额">
           <a-input-number v-decorator="[ 'realTotalMoney', validatorRules.realTotalMoney ]" />
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="支付方式  0:货到付款 1:先款后货">
-          <a-input placeholder="请输入支付方式  0:货到付款 1:先款后货" v-decorator="['payType', validatorRules.payType ]" />
+          label="支付方式">
+          <j-dict-select-tag  :triggerChange="true" dictCode="pay_type"  v-decorator="['payType', validatorRules.payType ]" placeholder="请选择支付方式">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="支付来源  1:现金，2：支付宝  3微信">
-          <a-input placeholder="请输入支付来源  1:现金，2：支付宝  3微信" v-decorator="['payFrom', validatorRules.payFrom ]" />
+          label="支付来源">
+          <j-dict-select-tag  :triggerChange="true" dictCode="pay_from"  v-decorator="['payFrom', validatorRules.payFrom ]" placeholder="请选择支付来源 ">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否支付定金 0:未支付 1:已支付">
-          <a-input placeholder="请输入是否支付定金 0:未支付 1:已支付" v-decorator="['isPayFront', validatorRules.isPayFront ]" />
+          label="是否支付定金">
+          <j-dict-select-tag  :triggerChange="true" dictCode="is_pay_front"  v-decorator="['isPayFront', validatorRules.isPayFront]" placeholder="请选择是否支付定金">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否支付尾款	0:未支付 1:已支付">
-          <a-input placeholder="请输入是否支付尾款	0:未支付 1:已支付" v-decorator="['isPayAll', validatorRules.isPayAll ]" />
+          label="是否支付尾款">
+          <j-dict-select-tag  :triggerChange="true" dictCode="is_pay_all"  v-decorator="['isPayAll', validatorRules.isPayAll]" placeholder="请选择是否支付尾款">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -104,8 +110,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否需要发票   1:需要 0:不需要">
-          <a-input placeholder="请输入是否需要发票   1:需要 0:不需要" v-decorator="['isInvoice', validatorRules.isInvoice ]" />
+          label="是否需要发票">
+          <j-dict-select-tag  :triggerChange="true" dictCode="is_invoice"  v-decorator="['isInvoice', validatorRules.isInvoice]" placeholder="请选择是否需要发票">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -116,8 +123,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="订单来源	0:门店 1:微信">
-          <a-input placeholder="请输入订单来源	0:门店 1:微信" v-decorator="['orderSrc', validatorRules.orderSrc ]" />
+          label="订单来源">
+          <j-dict-select-tag  :triggerChange="true" dictCode="order_src"  v-decorator="['orderSrc', validatorRules.orderSrc]" placeholder="请选择订单来源">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -134,7 +142,7 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="订单描述(针对于发猫前的进展信息)">
+          label="订单描述">
           <a-input placeholder="请输入订单描述(针对于发猫前的进展信息)" v-decorator="['orderDescription', validatorRules.orderDescription ]" />
         </a-form-item>
         <a-form-item
@@ -152,8 +160,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="0.未发生退款       1.退款中       2退款完成">
-          <a-input placeholder="请输入0.未发生退款       1.退款中       2退款完成" v-decorator="['refundStatus', validatorRules.refundStatus ]" />
+          label="退款状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="refund_status"  v-decorator="['refundStatus', validatorRules.refundStatus]" placeholder="请选择退款状态">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -170,8 +179,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否包含套餐 1是  -1不是">
-          <a-input placeholder="请输入是否包含套餐 1是  -1不是" v-decorator="['ifSetMeal', {}]" />
+          label="是否包含套餐">
+          <j-dict-select-tag  :triggerChange="true" dictCode="if_set_meal"  v-decorator="['ifSetMeal', validatorRules.ifSetMeal]" placeholder="请选择是否包含套餐">
+          </j-dict-select-tag>
         </a-form-item>
 		
       </a-form>

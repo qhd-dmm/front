@@ -183,22 +183,22 @@
             dataIndex: 'goodsTips'
            },
 		   {
-            title: '是否上架	0:不上架 1:上架',
+            title: '上架标识',
             align:"center",
-            dataIndex: 'isSale'
+            dataIndex: 'isSale_dictText'
            },
 		   {
-            title: '是否热销产品	0:否 1:是',
+            title: '热销标识',
             align:"center",
-            dataIndex: 'isHot'
+            dataIndex: 'isHot_dictText'
            },
 		   {
-            title: '商品分类ID路径',
+            title: '分类路径',
             align:"center",
             dataIndex: 'goodsCatPath'
            },
 		   {
-            title: '最后一级商品分类ID	',
+            title: '分类ID	',
             align:"center",
             dataIndex: 'goodsCatId'
            },
@@ -213,9 +213,9 @@
             dataIndex: 'goodsDesc'
            },
 		   {
-            title: '商品状态	-1:违规 0:未审核 1:已审核',
+            title: '商品状态',
             align:"center",
-            dataIndex: 'goodsStatus'
+            dataIndex: 'goodsStatus_dictText'
            },
 		   {
             title: '总销售量',
@@ -228,9 +228,9 @@
             dataIndex: 'saleTime'
            },
 		   {
-            title: '删除标志	-1:删除 1:有效',
+            title: '删除标志',
             align:"center",
-            dataIndex: 'dataStatus'
+            dataIndex: 'dataStatus_dictText'
            },
           {
             title: '操作',

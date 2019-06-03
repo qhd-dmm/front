@@ -17,13 +17,6 @@
           label="标签内容">
           <a-input placeholder="请输入标签内容" v-decorator="['content', validatorRules.content ]" />
         </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="删除标志 ">
-          <a-input placeholder="请输入删除标志 " v-decorator="['dataFlag', validatorRules.dataFlag ]" />
-        </a-form-item>
-		
       </a-form>
     </a-spin>
   </a-modal>
@@ -54,7 +47,6 @@
         form: this.$form.createForm(this),
         validatorRules:{
         content:{rules: [{ required: true, message: '请输入标签内容!' }]},
-        dataFlag:{rules: [{ required: true, message: '请输入删除标志 !' }]},
         },
         url: {
           add: "/dmmTags/dmmTags/add",

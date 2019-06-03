@@ -157,11 +157,6 @@
             align:"center",
             dataIndex: 'userrankImg'
            },
-		   {
-            title: ' 删除标志 -1:删除 1:有效',
-            align:"center",
-            dataIndex: 'dataFlag'
-           },
           {
             title: '操作',
             dataIndex: 'action',

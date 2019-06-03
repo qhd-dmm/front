@@ -133,14 +133,14 @@
             }
            },
 		   {
-            title: '采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)',
+            title: '采购类型',
             align:"center",
-            dataIndex: 'purchaseType'
+            dataIndex: 'purchaseType_dictText'
            },
 		   {
-            title: '采购状态(1.已申请   2.已到货    3已核销)',
+            title: '采购状态',
             align:"center",
-            dataIndex: 'purchaseStatus'
+            dataIndex: 'purchaseStatus_dictText'
            },
 		   {
             title: '采购单合计价格',

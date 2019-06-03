@@ -153,9 +153,9 @@
             dataIndex: 'address'
            },
 		   {
-            title: '供应商状态    0停用  1启用',
+            title: '供应商状态',
             align:"center",
-            dataIndex: 'supplierStatus'
+            dataIndex: 'supplierStatus_dictText'
            },
 		   {
             title: '供应商登陆名',
@@ -168,19 +168,14 @@
             dataIndex: 'loginPwd'
            },
 		   {
-            title: '供应商类型   1.活体 2.食品用品  3服务商',
+            title: '供应商类型',
             align:"center",
-            dataIndex: 'supplierType'
+            dataIndex: 'supplierType_dictText'
            },
 		   {
-            title: '是否合格   0不合格   1合格',
+            title: '是否合格',
             align:"center",
-            dataIndex: 'qualifiedStatus'
-           },
-		   {
-            title: '删除标志    -1已删除   1未删除',
-            align:"center",
-            dataIndex: 'dateStatus'
+            dataIndex: 'qualifiedStatus_dictText'
            },
           {
             title: '操作',

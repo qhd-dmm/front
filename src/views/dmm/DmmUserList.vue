@@ -143,9 +143,9 @@
             dataIndex: 'loginPwd'
            },
 		   {
-            title: '0保密  1男 2女',
+            title: '性别',
             align:"center",
-            dataIndex: 'userSex'
+            dataIndex: 'userSex_dictText'
            },
 		   {
             title: '昵称',
@@ -188,14 +188,14 @@
             dataIndex: 'userCode'
            },
 		   {
-            title: '收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)',
+            title: '收入水平',
             align:"center",
-            dataIndex: 'income'
+            dataIndex: 'income_dictText'
            },
 		   {
-            title: '职业 1.学生 2白领 3个体',
+            title: '职业',
             align:"center",
-            dataIndex: 'profession'
+            dataIndex: 'profession_dictText'
            },
 		   {
             title: '推荐人id',
@@ -206,16 +206,6 @@
             title: '会员等级id',
             align:"center",
             dataIndex: 'rankId'
-           },
-		   {
-            title: '用户账号状态 0:停用 1:启用',
-            align:"center",
-            dataIndex: 'userStatus'
-           },
-		   {
-            title: '	-1:删除 1:有效',
-            align:"center",
-            dataIndex: 'dataFlag'
            },
           {
             title: '操作',

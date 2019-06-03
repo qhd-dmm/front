@@ -26,8 +26,9 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="0保密  1男 2女">
-          <a-input placeholder="请输入0保密  1男 2女" v-decorator="['userSex', validatorRules.userSex ]" />
+          label="性别">
+          <j-dict-select-tag  :triggerChange="true" dictCode="sex"  v-decorator="['userSex', validatorRules.userSex]" placeholder="请选择性别">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -80,14 +81,16 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)">
-          <a-input placeholder="请输入收入水平(1:0-2000    2:2000-5000   3:5000-1w   4:1w+)" v-decorator="['income', validatorRules.income ]" />
+          label="收入水平">
+          <j-dict-select-tag  :triggerChange="true" dictCode="income"  v-decorator="['income', validatorRules.income]" placeholder="请选择收入">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="职业 1.学生 2白领 3个体">
-          <a-input placeholder="请输入职业 1.学生 2白领 3个体" v-decorator="['profession', validatorRules.profession ]" />
+          label="职业">
+          <j-dict-select-tag  :triggerChange="true" dictCode="profession"  v-decorator="['profession', validatorRules.profession]" placeholder="请选择职业">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -100,18 +103,6 @@
           :wrapperCol="wrapperCol"
           label="会员等级id">
           <a-input placeholder="请输入会员等级id" v-decorator="['rankId', validatorRules.rankId ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="用户账号状态 0:停用 1:启用">
-          <a-input placeholder="请输入用户账号状态 0:停用 1:启用" v-decorator="['userStatus', validatorRules.userStatus ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="	-1:删除 1:有效">
-          <a-input placeholder="请输入	-1:删除 1:有效" v-decorator="['dataFlag', validatorRules.dataFlag ]" />
         </a-form-item>
 		
       </a-form>

@@ -41,12 +41,7 @@
           label="用户等级图标">
           <a-input placeholder="请输入用户等级图标" v-decorator="['userrankImg', validatorRules.userrankImg ]" />
         </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label=" 删除标志 -1:删除 1:有效">
-          <a-input placeholder="请输入 删除标志 -1:删除 1:有效" v-decorator="['dataFlag', validatorRules.dataFlag ]" />
-        </a-form-item>
+
 		
       </a-form>
     </a-spin>

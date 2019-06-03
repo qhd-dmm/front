@@ -14,14 +14,16 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)">
-          <a-input placeholder="请输入采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)" v-decorator="['purchaseType', validatorRules.purchaseType ]" />
+          label="采购类型">
+          <j-dict-select-tag  :triggerChange="true" dictCode="purchase_type"  v-decorator="['purchaseType', validatorRules.purchaseType]" placeholder="请选择采购类型">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="采购状态(1.已申请   2.已到货    3已核销)">
-          <a-input placeholder="请输入采购状态(1.已申请   2.已到货    3已核销)" v-decorator="['purchaseStatus', validatorRules.purchaseStatus ]" />
+          label="采购状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="purchase_status"  v-decorator="['purchaseStatus', validatorRules.purchaseStatus]" placeholder="请选择采购状态">
+          </j-dict-select-tag>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"

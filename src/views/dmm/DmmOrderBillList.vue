@@ -138,14 +138,14 @@
             dataIndex: 'orderId'
            },
 		   {
-            title: '清单类型(1.活体  2.商品   3.服务   4.套餐 )',
+            title: '清单类型',
             align:"center",
-            dataIndex: 'billType'
+            dataIndex: 'billType_dictText'
            },
 		   {
             title: '是否赠礼',
             align:"center",
-            dataIndex: 'isGift'
+            dataIndex: 'isGift_dictText'
            },
 		   {
             title: '供应商id',
@@ -173,9 +173,9 @@
             dataIndex: 'billRemarks'
            },
 		   {
-            title: '0.未发生退款       1.退款中       2退款完成',
+            title: '退款状态',
             align:"center",
-            dataIndex: 'refundStatus'
+            dataIndex: 'refundStatus_dictText'
            },
           {
             title: '操作',

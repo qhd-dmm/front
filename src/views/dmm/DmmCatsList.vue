@@ -143,9 +143,9 @@
             dataIndex: 'name'
            },
 		   {
-            title: '猫咪公母   0未知  1公  2母',
+            title: '公母',
             align:"center",
-            dataIndex: 'sex'
+            dataIndex: 'sex_dictText'
            },
 		   {
             title: '体重(kg)',
@@ -158,7 +158,7 @@
             dataIndex: 'birthday'
            },
 		   {
-            title: '猫咪描述(疫苗情况，血统情况以及其他情况描述 )',
+            title: '猫咪描述',
             align:"center",
             dataIndex: 'description'
            },
@@ -178,9 +178,9 @@
             dataIndex: 'belongingSupplierId'
            },
 		   {
-            title: '删除标识  -1删除   1未删除',
+            title: '删除标识',
             align:"center",
-            dataIndex: 'dataStatus'
+            dataIndex: 'dataStatus_dictText'
            },
           {
             title: '操作',

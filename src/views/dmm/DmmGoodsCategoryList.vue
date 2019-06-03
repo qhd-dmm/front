@@ -148,14 +148,14 @@
             dataIndex: 'catSort'
            },
 		   {
-            title: '删除标识   -1删除   1未删除',
+            title: '删除标识',
             align:"center",
-            dataIndex: 'dataStatus'
+            dataIndex: 'dataStatus_dictText'
            },
 		   {
-            title: ' 0隐藏     1显示',
+            title: '显示标识',
             align:"center",
-            dataIndex: 'isShow'
+            dataIndex: 'isShow_dictText'
            },
 		   {
             title: '分类描述',

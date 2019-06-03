@@ -26,8 +26,11 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="猫咪公母   0未知  1公  2母">
-          <a-input placeholder="请输入猫咪公母   0未知  1公  2母" v-decorator="['sex', validatorRules.sex ]" />
+          label="猫咪公母">
+          <a-select v-decorator="[ 'sex', {}]" placeholder="请选择猫咪公母">
+            <a-select-option :value="1">公</a-select-option>
+            <a-select-option :value="2">母</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -39,12 +42,12 @@
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
           label="出生日期">
-          <a-date-picker showTime format='YYYY-MM-DD HH:mm:ss' v-decorator="[ 'birthday', validatorRules.birthday ]" />
+          <a-date-picker showTime format='YYYY-MM-DD' v-decorator="[ 'birthday', validatorRules.birthday ]" />
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="猫咪描述(疫苗情况，血统情况以及其他情况描述 )">
+          label="猫咪描述">
           <a-input placeholder="请输入猫咪描述(疫苗情况，血统情况以及其他情况描述 )" v-decorator="['description', validatorRules.description ]" />
         </a-form-item>
         <a-form-item
@@ -64,12 +67,6 @@
           :wrapperCol="wrapperCol"
           label="所属供应商id">
           <a-input-number v-decorator="[ 'belongingSupplierId', validatorRules.belongingSupplierId ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="删除标识  -1删除   1未删除">
-          <a-input placeholder="请输入删除标识  -1删除   1未删除" v-decorator="['dataStatus', validatorRules.dataStatus ]" />
         </a-form-item>
 		
       </a-form>

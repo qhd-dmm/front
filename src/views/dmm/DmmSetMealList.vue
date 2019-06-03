@@ -143,9 +143,9 @@
             dataIndex: 'realAmount'
            },
 		   {
-            title: '1启用   -1停用',
+            title: '启停用',
             align:"center",
-            dataIndex: 'dataFlag'
+            dataIndex: 'dataFlag_dictText'
            },
           {
             title: '操作',

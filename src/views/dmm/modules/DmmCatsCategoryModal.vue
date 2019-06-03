@@ -32,14 +32,11 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="删除标识   -1删除   1未删除">
-          <a-input placeholder="请输入删除标识   -1删除   1未删除" v-decorator="['dataStatus', validatorRules.dataStatus ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label=" 0隐藏     1显示">
-          <a-input placeholder="请输入 0隐藏     1显示" v-decorator="['isShow', validatorRules.isShow ]" />
+          label="显示标识">
+          <a-select v-decorator="[ 'isShow', {}]" placeholder="请选择显示标识">
+            <a-select-option :value="0">隐藏</a-select-option>
+            <a-select-option :value="1">显示</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"

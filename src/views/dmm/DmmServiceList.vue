@@ -148,11 +148,6 @@
             dataIndex: 'timeEnd'
            },
 		   {
-            title: '1启用    -1无效',
-            align:"center",
-            dataIndex: 'deleteFlag'
-           },
-		   {
             title: '服务名称',
             align:"center",
             dataIndex: 'serviceName'

@@ -74,14 +74,11 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="是否上架	0:不上架 1:上架">
-          <a-input placeholder="请输入是否上架	0:不上架 1:上架" v-decorator="['isSale', validatorRules.isSale ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="是否热销产品	0:否 1:是">
-          <a-input placeholder="请输入是否热销产品	0:否 1:是" v-decorator="['isHot', validatorRules.isHot ]" />
+          label="是否上架	">
+          <a-select v-decorator="[ 'isSale', {}]" placeholder="请选择是否上架">
+            <a-select-option :value="0">不上架</a-select-option>
+            <a-select-option :value="1">上架</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -98,8 +95,11 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="品牌Id">
-          <a-input-number v-decorator="[ 'brandId', validatorRules.brandId ]" />
+          label="品牌">
+          <a-select v-decorator="[ 'brandId', validatorRules.brandId]" placeholder="请选择品牌">
+            <a-select-option :value="0">咪欧</a-select-option>
+            <a-select-option :value="1">其他</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -110,8 +110,12 @@
         <a-form-item
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
-          label="商品状态	-1:违规 0:未审核 1:已审核">
-          <a-input placeholder="请输入商品状态	-1:违规 0:未审核 1:已审核" v-decorator="['goodsStatus', validatorRules.goodsStatus ]" />
+          label="商品状态">
+          <a-select v-decorator="[ 'goodsStatus', validatorRules.goodsStatus]" placeholder="请选择商品状态">
+            <a-select-option :value="-1">违规</a-select-option>
+            <a-select-option :value="0">未审核</a-select-option>
+            <a-select-option :value="1">已审核</a-select-option>
+          </a-select>
         </a-form-item>
         <a-form-item
           :labelCol="labelCol"
@@ -124,12 +128,6 @@
           :wrapperCol="wrapperCol"
           label="上架时间">
           <a-date-picker showTime format='YYYY-MM-DD HH:mm:ss' v-decorator="[ 'saleTime', validatorRules.saleTime ]" />
-        </a-form-item>
-        <a-form-item
-          :labelCol="labelCol"
-          :wrapperCol="wrapperCol"
-          label="删除标志	-1:删除 1:有效">
-          <a-input placeholder="请输入删除标志	-1:删除 1:有效" v-decorator="['dataStatus', validatorRules.dataStatus ]" />
         </a-form-item>
 		
       </a-form>
@@ -180,7 +178,6 @@
         goodsStatus:{rules: [{ required: true, message: '请输入商品状态	-1:违规 0:未审核 1:已审核!' }]},
         saleNum:{rules: [{ required: true, message: '请输入总销售量!' }]},
         saleTime:{rules: [{ required: true, message: '请输入上架时间!' }]},
-        dataStatus:{rules: [{ required: true, message: '请输入删除标志	-1:删除 1:有效!' }]},
         },
         url: {
           add: "/dmmGoods/dmmGoods/add",

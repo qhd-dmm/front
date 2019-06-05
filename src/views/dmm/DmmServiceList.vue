@@ -5,7 +5,6 @@
     <div class="table-page-search-wrapper">
       <a-form layout="inline">
         <a-row :gutter="24">
-
           <a-col :md="6" :sm="8">
             <a-form-item label="服务商id">
               <a-input placeholder="请输入服务商id" v-model="queryParam.supplierId"></a-input>
@@ -13,26 +12,15 @@
           </a-col>
           <a-col :md="6" :sm="8">
             <a-form-item label="有效期开始">
-              <a-input placeholder="请输入有效期开始" v-model="queryParam.timeStart"></a-input>
+              <a-date-picker showTime format='YYYY-MM-DD HH:mm:ss' v-model="queryParam.timeStart"/>
             </a-form-item>
           </a-col>
-        <template v-if="toggleSearchStatus">
         <a-col :md="6" :sm="8">
             <a-form-item label="有效期结束">
-              <a-input placeholder="请输入有效期结束" v-model="queryParam.timeEnd"></a-input>
+              <a-date-picker showTime format='YYYY-MM-DD HH:mm:ss' v-model="queryParam.timeEnd"/>
             </a-form-item>
           </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="1启用    -1无效">
-              <a-input placeholder="请输入1启用    -1无效" v-model="queryParam.deleteFlag"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="服务名称">
-              <a-input placeholder="请输入服务名称" v-model="queryParam.serviceName"></a-input>
-            </a-form-item>
-          </a-col>
-        </template>
+
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
@@ -43,7 +31,6 @@
               </a>
             </span>
           </a-col>
-
         </a-row>
       </a-form>
     </div>

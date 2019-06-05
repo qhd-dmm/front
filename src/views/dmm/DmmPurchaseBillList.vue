@@ -11,28 +11,6 @@
               <a-input placeholder="请输入采购单id" v-model="queryParam.purchaseId"></a-input>
             </a-form-item>
           </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="货品id">
-              <a-input placeholder="请输入货品id" v-model="queryParam.goodsId"></a-input>
-            </a-form-item>
-          </a-col>
-        <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="货品名称">
-              <a-input placeholder="请输入货品名称" v-model="queryParam.goodsName"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="清单备注">
-              <a-input placeholder="请输入清单备注" v-model="queryParam.remarks"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="采购清单数量">
-              <a-input placeholder="请输入采购清单数量" v-model="queryParam.num"></a-input>
-            </a-form-item>
-          </a-col>
-        </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>

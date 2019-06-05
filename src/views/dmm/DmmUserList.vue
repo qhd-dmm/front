@@ -5,21 +5,9 @@
     <div class="table-page-search-wrapper">
       <a-form layout="inline">
         <a-row :gutter="24">
-
           <a-col :md="6" :sm="8">
-            <a-form-item label="登陆名">
-              <a-input placeholder="请输入登陆名" v-model="queryParam.loginName"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="密码">
-              <a-input placeholder="请输入密码" v-model="queryParam.loginPwd"></a-input>
-            </a-form-item>
-          </a-col>
-        <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="0保密  1男 2女">
-              <a-input placeholder="请输入0保密  1男 2女" v-model="queryParam.userSex"></a-input>
+            <a-form-item label="性别">
+              <j-dict-select-tag v-model="queryParam.userSex" placeholder="请选择性别" dictCode="sex"/>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
@@ -27,9 +15,16 @@
               <a-input placeholder="请输入昵称" v-model="queryParam.nickName"></a-input>
             </a-form-item>
           </a-col>
+        <template v-if="toggleSearchStatus">
+
           <a-col :md="6" :sm="8">
-            <a-form-item label="真实姓名">
-              <a-input placeholder="请输入真实姓名" v-model="queryParam.trueName"></a-input>
+            <a-form-item label="收入水平">
+              <j-dict-select-tag v-model="queryParam.income" placeholder="请选择收入水平" dictCode="income"/>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="职业">
+              <j-dict-select-tag v-model="queryParam.profession" placeholder="请选择职业" dictCode="profession"/>
             </a-form-item>
           </a-col>
         </template>

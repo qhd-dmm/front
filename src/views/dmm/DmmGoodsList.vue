@@ -23,11 +23,6 @@
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="商品图片地址">
-              <a-input placeholder="请输入商品图片地址" v-model="queryParam.goodsImg"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
             <a-form-item label="市场价格">
               <a-input placeholder="请输入市场价格" v-model="queryParam.marketPrice"></a-input>
             </a-form-item>

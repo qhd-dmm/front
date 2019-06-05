@@ -23,11 +23,6 @@
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="标签">
-              <a-input placeholder="请输入标签" v-model="queryParam.tags"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
             <a-form-item label="申请时间">
               <a-input placeholder="请输入申请时间" v-model="queryParam.applyTime"></a-input>
             </a-form-item>

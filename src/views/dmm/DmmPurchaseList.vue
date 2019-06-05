@@ -5,23 +5,17 @@
     <div class="table-page-search-wrapper">
       <a-form layout="inline">
         <a-row :gutter="24">
-
           <a-col :md="6" :sm="8">
-            <a-form-item label="采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)">
-              <a-input placeholder="请输入采购类型(1.订单采购  2.公司日常采购   3.固定资产采购)" v-model="queryParam.purchaseType"></a-input>
+            <a-form-item label="采购类型">
+              <j-dict-select-tag v-model="queryParam.purchaseType" placeholder="请选择采购类型" dictCode="purchase_type"/>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="采购状态(1.已申请   2.已到货    3已核销)">
-              <a-input placeholder="请输入采购状态(1.已申请   2.已到货    3已核销)" v-model="queryParam.purchaseStatus"></a-input>
+            <a-form-item label="采购状态">
+              <j-dict-select-tag v-model="queryParam.purchaseStatus" placeholder="请选择采购状态" dictCode="purchase_status"/>
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="采购单合计价格">
-              <a-input placeholder="请输入采购单合计价格" v-model="queryParam.totalPrice"></a-input>
-            </a-form-item>
-          </a-col>
           <a-col :md="6" :sm="8">
             <a-form-item label="申请时间">
               <a-input placeholder="请输入申请时间" v-model="queryParam.applyTime"></a-input>

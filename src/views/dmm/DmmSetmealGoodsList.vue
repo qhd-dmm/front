@@ -12,21 +12,11 @@
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="商品类型    1猫   2商品  3服务">
-              <a-input placeholder="请输入商品类型    1猫   2商品  3服务" v-model="queryParam.goodsType"></a-input>
+            <a-form-item label="商品类型">
+              <j-dict-select-tag v-model="queryParam.goodsType" placeholder="请选择商品类型" dictCode="goods_type"/>
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="商品id   ">
-              <a-input placeholder="请输入商品id   " v-model="queryParam.goodsId"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="商品数量">
-              <a-input placeholder="请输入商品数量" v-model="queryParam.goodsNum"></a-input>
-            </a-form-item>
-          </a-col>
         </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">

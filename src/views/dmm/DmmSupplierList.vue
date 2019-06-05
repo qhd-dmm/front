@@ -17,19 +17,19 @@
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
+          <a-col :md="6" :sm="8">
+            <a-form-item label="供应商状态">
+              <j-dict-select-tag v-model="queryParam.supplierStatus" placeholder="供应商状态" dictCode="enable_status"/>
+            </a-form-item>
+          </a-col>
         <a-col :md="6" :sm="8">
             <a-form-item label="供应商手机">
               <a-input placeholder="请输入供应商手机" v-model="queryParam.supplierPhone"></a-input>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="供应商地址">
-              <a-input placeholder="请输入供应商地址" v-model="queryParam.address"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="供应商状态    0停用  1启用">
-              <a-input placeholder="请输入供应商状态    0停用  1启用" v-model="queryParam.supplierStatus"></a-input>
+            <a-form-item label="供应商类型">
+              <j-dict-select-tag v-model="queryParam.supplierType" placeholder="供应商类型" dictCode="supplier_type"/>
             </a-form-item>
           </a-col>
         </template>

@@ -17,21 +17,22 @@
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="猫咪公母   0未知  1公  2母">
-              <a-input placeholder="请输入猫咪公母   0未知  1公  2母" v-model="queryParam.sex"></a-input>
+
+
+          <a-col :md="6" :sm="8">
+            <a-form-item label="猫咪分类id">
+              <a-input placeholder="请输入猫咪分类id" v-model="queryParam.categoryId"></a-input>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="体重(kg)">
-              <a-input placeholder="请输入体重(kg)" v-model="queryParam.weight"></a-input>
+            <a-form-item label="所属会员">
+              <a-input placeholder="请输入所属会员" v-model="queryParam.belongingUserId"></a-input>
             </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="出生日期">
-              <a-input placeholder="请输入出生日期" v-model="queryParam.birthday"></a-input>
-            </a-form-item>
-          </a-col>
+          </a-col> <a-col :md="6" :sm="8">
+          <a-form-item label="所属供应商">
+            <a-input placeholder="请输入所属供应商" v-model="queryParam.belongingSupplierId"></a-input>
+          </a-form-item>
+        </a-col>
         </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">

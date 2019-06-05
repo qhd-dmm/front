@@ -12,24 +12,14 @@
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="清单类型(1.活体  2.商品   3.服务   4.套餐 )">
-              <a-input placeholder="请输入清单类型(1.活体  2.商品   3.服务   4.套餐 )" v-model="queryParam.billType"></a-input>
+            <a-form-item label="清单类型">
+              <j-dict-select-tag v-model="queryParam.billType" placeholder="请选择清单类型" dictCode="bill_type"/>
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
         <a-col :md="6" :sm="8">
             <a-form-item label="是否赠礼">
-              <a-input placeholder="请输入是否赠礼" v-model="queryParam.isGift"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="供应商id">
-              <a-input placeholder="请输入供应商id" v-model="queryParam.supplierId"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="商品id">
-              <a-input placeholder="请输入商品id" v-model="queryParam.goodsId"></a-input>
+              <j-dict-select-tag v-model="queryParam.isGift" placeholder="请选择是否赠礼" dictCode="is_gift"/>
             </a-form-item>
           </a-col>
         </template>

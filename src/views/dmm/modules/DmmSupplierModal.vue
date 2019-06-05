@@ -39,7 +39,7 @@
           :labelCol="labelCol"
           :wrapperCol="wrapperCol"
           label="供应商状态">
-          <j-dict-select-tag  :triggerChange="true" dictCode="supplier_status"  v-decorator="['supplierStatus', validatorRules.supplierStatus]" placeholder="请选择供应商状态">
+          <j-dict-select-tag  :triggerChange="true" dictCode="enable_status"  v-decorator="['supplierStatus', validatorRules.supplierStatus]" placeholder="请选择供应商状态">
           </j-dict-select-tag>
         </a-form-item>
         <a-form-item

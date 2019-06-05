@@ -16,23 +16,11 @@
               <a-input placeholder="请输入开始积分" v-model="queryParam.startScore"></a-input>
             </a-form-item>
           </a-col>
-        <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
+          <a-col :md="6" :sm="8">
             <a-form-item label="结束积分">
               <a-input placeholder="请输入结束积分" v-model="queryParam.endScore"></a-input>
             </a-form-item>
           </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="折扣">
-              <a-input placeholder="请输入折扣" v-model="queryParam.rebate"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="用户等级图标">
-              <a-input placeholder="请输入用户等级图标" v-model="queryParam.userrankImg"></a-input>
-            </a-form-item>
-          </a-col>
-        </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>

@@ -7,29 +7,50 @@
         <a-row :gutter="24">
 
           <a-col :md="6" :sm="8">
-            <a-form-item label="订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)">
-              <a-input placeholder="请输入订单状态(1.待付款  2.待发货  3.待收货   4.交易完成  5.交易关闭)" v-model="queryParam.orderStatus"></a-input>
+
+            <a-form-item label="订单状态">
+              <j-dict-select-tag v-model="queryParam.orderStatus" placeholder="请选择订单状态" dictCode="order_status"/>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="收货方式	0:送货上门 1:自提">
-              <a-input placeholder="请输入收货方式	0:送货上门 1:自提" v-model="queryParam.deliverType"></a-input>
+            <a-form-item label="收货方式">
+              <j-dict-select-tag v-model="queryParam.deliverType" placeholder="请选择收获方式" dictCode="deliver_type"/>
             </a-form-item>
           </a-col>
         <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="客户id">
-              <a-input placeholder="请输入客户id" v-model="queryParam.customId"></a-input>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="支付方式">
+              <j-dict-select-tag v-model="queryParam.payType" placeholder="请选择支付方式" dictCode="pay_type"/>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="清单总金额">
-              <a-input placeholder="请输入清单总金额" v-model="queryParam.billMoney"></a-input>
+            <a-form-item label="支付来源">
+              <j-dict-select-tag v-model="queryParam.payFrom" placeholder="请选择支付来源" dictCode="pay_from"/>
             </a-form-item>
           </a-col>
           <a-col :md="6" :sm="8">
-            <a-form-item label="运费">
-              <a-input placeholder="请输入运费" v-model="queryParam.deliverMoney"></a-input>
+            <a-form-item label="是否支付定金">
+              <j-dict-select-tag v-model="queryParam.isPayFront" placeholder="请选择是否支付定金" dictCode="is_pay_front"/>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="是否支付尾款">
+              <j-dict-select-tag v-model="queryParam.isPayAll" placeholder="请选择是否支付尾款" dictCode="is_pay_all"/>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="订单来源">
+              <j-dict-select-tag v-model="queryParam.orderSrc" placeholder="请选择订单来源" dictCode="order_src"/>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="退款状态">
+              <j-dict-select-tag v-model="queryParam.refundStatus" placeholder="请选择退款状态" dictCode="refund_status"/>
+            </a-form-item>
+          </a-col>
+          <a-col :md="6" :sm="8">
+            <a-form-item label="所属员工id">
+              <j-dict-select-tag v-model="queryParam.refundStatus" placeholder="请选择退款状态" dictCode="refund_status"/>
             </a-form-item>
           </a-col>
         </template>

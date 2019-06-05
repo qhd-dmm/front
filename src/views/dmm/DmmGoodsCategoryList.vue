@@ -16,23 +16,6 @@
               <a-input placeholder="请输入分类名称" v-model="queryParam.catName"></a-input>
             </a-form-item>
           </a-col>
-        <template v-if="toggleSearchStatus">
-        <a-col :md="6" :sm="8">
-            <a-form-item label="分类排序号">
-              <a-input placeholder="请输入分类排序号" v-model="queryParam.catSort"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="删除标识   -1删除   1未删除">
-              <a-input placeholder="请输入删除标识   -1删除   1未删除" v-model="queryParam.dataStatus"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label=" 0隐藏     1显示">
-              <a-input placeholder="请输入 0隐藏     1显示" v-model="queryParam.isShow"></a-input>
-            </a-form-item>
-          </a-col>
-        </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>

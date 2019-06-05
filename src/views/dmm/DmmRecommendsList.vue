@@ -22,16 +22,6 @@
               <a-input placeholder="请输入猫咪id" v-model="queryParam.catsId"></a-input>
             </a-form-item>
           </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="猫咪图片">
-              <a-input placeholder="请输入猫咪图片" v-model="queryParam.pictures"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :md="6" :sm="8">
-            <a-form-item label="推荐描述">
-              <a-input placeholder="请输入推荐描述" v-model="queryParam.description"></a-input>
-            </a-form-item>
-          </a-col>
         </template>
           <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
